@@ -5,6 +5,7 @@
 .classpath
 .project
 .settings
+.idea
 
 # =========================
 # Operating System Files
@@ -52,3 +53,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.iml
