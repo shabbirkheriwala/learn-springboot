@@ -1,4 +1,4 @@
-package com.learn.springboot.hcmapp.hello;
+package com.learn.springboot.hcmapp.resources;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

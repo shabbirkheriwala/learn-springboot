@@ -1,8 +1,10 @@
 package com.learn.springboot.hcmapp.model;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class CustomUserDetails extends User implements UserDetails {
@@ -13,11 +15,19 @@ public class CustomUserDetails extends User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        System.out.println("************* CustomUserDetails : getAuthorities ************ ");
+        Collection<SimpleGrantedAuthority> collection = new ArrayList<>();
+        if(super.getName() != null && super.getName().equals("shabs")) {
+            collection.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        } else if(super.getName() != null && super.getName().equals("test")) {
+            collection.add(new SimpleGrantedAuthority("ROLE_USER"));
+        }
+        return collection;
     }
 
     @Override
     public String getUsername() {
+        System.out.println("************* CustomUserDetails : getUsername ************ " +super.getName());
         return super.getName();
     }
 
