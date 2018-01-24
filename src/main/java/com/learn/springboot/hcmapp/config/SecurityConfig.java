@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         System.out.println("***** configure ******** HttpSecurity");
-        http.csrf().disable();
+        http.csrf().disable(); //  disable for now Cross Site Request Forgery
         http.authorizeRequests()
                 .antMatchers("**/secured/**").authenticated()
                 .anyRequest().permitAll()
