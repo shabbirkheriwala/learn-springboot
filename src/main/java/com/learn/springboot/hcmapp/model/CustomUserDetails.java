@@ -17,7 +17,7 @@ public class CustomUserDetails extends User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         System.out.println("************* CustomUserDetails : getAuthorities ************ ");
         Collection<SimpleGrantedAuthority> collection = new ArrayList<>();
-        if(super.getName() != null && super.getName().equals("shabs")) {
+        if(super.getName() != null && super.getName().equals("admin")) {
             collection.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         } else if(super.getName() != null && super.getName().equals("test")) {
             collection.add(new SimpleGrantedAuthority("ROLE_USER"));

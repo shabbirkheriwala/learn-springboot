@@ -31,8 +31,8 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(method=RequestMethod.POST, value="/add")
-	public @ResponseBody String addNewUser (@RequestBody Employee employee) {
+	public @ResponseBody String addNewEmployee (@RequestBody Employee employee) {
 		employeeRepository.save(employee);
-		return "Saved";
+		return "Employee Saved";
 	}
 }
